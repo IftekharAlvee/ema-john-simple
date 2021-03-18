@@ -4,11 +4,13 @@ const Cart = (props) => {
 
     const cart = props.cart;
     // console.log(cart);
-    let total = 0;
-    for (let i = 0; i < cart.length; i++) {
-        const product = cart[i];
-        total = total + product.price*product.quantity;
-    }
+    // let total = 0;
+    // for (let i = 0; i < cart.length; i++) {
+    //     const product = cart[i];
+    //     total = total + product.price*product.quantity;
+    // }
+
+    const total = cart.reduce((total, product) => total + product.price,0);
 
     let tax = 0;
     tax = total/10;
